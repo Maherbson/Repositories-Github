@@ -15,11 +15,11 @@ dependencies {
     implementation ViewLibs.material
     implementation ViewLibs.constraintLayout
 
-    //implementation KoinLibs.koinAndroid
-    //implementation KoinLibs.koinCore
-
     testImplementation UnitTestLibs.jUnit
     androidTestImplementation UnitTestLibs.jUnitKtx
     androidTestImplementation InstrumentedTestLibs.espressoCore
 
+}
+repositories {
+    mavenCentral()
 }

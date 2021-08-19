@@ -1,0 +1,13 @@
+apply from: "$rootProject.projectDir/config-gradle/config-library-build_network.gradle"
+
+dependencies {
+    implementation KotlinLibs.stdlib
+    implementation KotlinLibs.stdlibJdk
+    implementation ViewLibs.coreKtx
+    implementation RetrofitLibs.retrofit
+    implementation RetrofitLibs.retrofitConverter
+    implementation KoinLibs.koinCore
+
+    api RetrofitLibs.okHttp
+    api RetrofitLibs.okHttpLoggingInterceptor
+}

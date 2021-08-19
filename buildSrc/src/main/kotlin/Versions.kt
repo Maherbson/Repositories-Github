@@ -20,7 +20,7 @@ object Versions {
     const val squareUpOkHttp = "3.12.13"
     const val okHttpLogging = "3.12.13"
 
-    const val orgKoin = "2.2.0-rc-2"
+    const val orgKoin = "3.1.2"
 
     const val lifecycle = "2.2.0"
     const val jakeTimber = "4.7.1"

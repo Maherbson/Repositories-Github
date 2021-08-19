@@ -18,6 +18,7 @@ plugins {
 allprojects {
     repositories {
         google()
+        mavenCentral()
     }
     apply plugin: KotlinLibs.ktLint
 }
