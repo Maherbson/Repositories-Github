@@ -3,7 +3,6 @@ object KotlinLibs {
     const val stdlibJdk = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val buildGradle = "com.android.tools.build:gradle:${Versions.buildGradle}"
-    const val ktLint = "org.jlleitschuh.gradle.ktlint"
 
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"

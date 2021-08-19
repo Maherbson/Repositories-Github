@@ -5,11 +5,17 @@ plugins {
 
 apply from: "$rootProject.projectDir/config-gradle/android.gradle"
 
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
 dependencies {
     implementation project(Modules.ui)
     implementation project(Modules.network)
     implementation project(Modules.core)
-    implementation project(Modules.androidTest)
+    implementation project(Modules.domainInfinityScroll)
 
     implementation KotlinLibs.stdlib
     implementation KotlinLibs.stdlibJdk
@@ -18,9 +24,23 @@ dependencies {
     implementation ViewLibs.material
     implementation ViewLibs.constraintLayout
 
+    implementation KoinLibs.koinCore
+
+    api RetrofitLibs.retrofit
+
+    implementation KotlinLibs.coroutinesAndroid
+    implementation KotlinLibs.coroutinesCore
+    implementation KotlinLibs.coroutinesLifecycle
+    implementation KotlinLibs.coroutinesRunTime
+    implementation KotlinLibs.coroutinesLiveData
+
     testImplementation UnitTestLibs.jUnit
     androidTestImplementation UnitTestLibs.jUnitKtx
     androidTestImplementation InstrumentedTestLibs.espressoCore
+    androidTestImplementation UnitTestLibs.mockitoAndroid
+    androidTestImplementation UnitTestLibs.mockitoCore
+    androidTestImplementation UnitTestLibs.mockitoKotlin
+    androidTestImplementation (KoinLibs.koinTest) { exclude group: 'org.mockito' }
 
 }
 repositories {

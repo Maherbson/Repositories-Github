@@ -1,15 +1,9 @@
 apply from: "$rootProject.projectDir/config-gradle/config-library-build.gradle"
 
-android {
-    buildFeatures {
-        viewBinding true
-    }
-}
 
 dependencies {
 
     implementation KotlinLibs.stdlib
     implementation ViewLibs.coreKtx
-    implementation ViewLibs.appcompat
-    implementation ViewLibs.material
+    implementation KoinLibs.koinCore
 }

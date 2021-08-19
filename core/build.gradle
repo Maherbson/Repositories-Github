@@ -2,6 +2,7 @@ apply from: "$rootProject.projectDir/config-gradle/config-library-build.gradle"
 
 dependencies {
     implementation KotlinLibs.stdlib
+    implementation KotlinLibs.stdlibJdk
     implementation ViewLibs.coreKtx
     implementation ViewLibs.appcompat
     implementation ViewLibs.fragment
@@ -13,4 +14,7 @@ dependencies {
     implementation Lifecycle.lifecycleViewModelKtx
     implementation Lifecycle.lifecycleCompiler
     implementation Lifecycle.lifecycleLiveDataKtx
+}
+repositories {
+    mavenCentral()
 }

@@ -12,10 +12,6 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -36,4 +32,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }

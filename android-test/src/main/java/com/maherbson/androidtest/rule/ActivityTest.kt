@@ -2,7 +2,6 @@ package com.maherbson.androidtest.rule
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
-import androidx.test.rule.ActivityTestRule
 import com.maherbson.androidtest.robot.RobotAction
 import com.maherbson.androidtest.robot.RobotArrangement
 import com.maherbson.androidtest.robot.RobotAssertion
