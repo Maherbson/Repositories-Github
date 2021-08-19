@@ -9,6 +9,7 @@ dependencies {
     implementation project(Modules.ui)
     implementation project(Modules.network)
     implementation project(Modules.core)
+    implementation project(Modules.androidTest)
 
     implementation KotlinLibs.stdlib
     implementation KotlinLibs.stdlibJdk
