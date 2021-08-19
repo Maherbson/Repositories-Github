@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+apply from: "$rootProject.projectDir/config-gradle/config-library-build.gradle"
+
+dependencies {
+
+    implementation KotlinLibs.stdlib
+    implementation ViewLibs.coreKtx
+    implementation ViewLibs.appcompat
+    implementation ViewLibs.material
+    implementation ViewLibs.glide
+}
+repositories {
+    mavenCentral()
+}

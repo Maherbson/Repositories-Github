@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/spacing_02"
     android:clipToPadding="true"
-    app:cardUseCompatPadding="true"
-    app:cardElevation="2dp">
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,9 +27,10 @@
 
         <TextView
             android:id="@+id/tvRepositoryName"
+            style="@style/Title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/spacing_02"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="@+id/divider"
@@ -40,7 +41,7 @@
             android:id="@+id/tvDescRepositoryDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_02"
             app:layout_constraintEnd_toEndOf="@+id/tvRepositoryName"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tvRepositoryName"
@@ -50,6 +51,7 @@
 
         <TextView
             android:id="@+id/tvUserName"
+            style="@style/BodyBold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -61,6 +63,7 @@
 
         <TextView
             android:id="@+id/tvNameLastname"
+            style="@style/BodyBold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -82,9 +85,10 @@
             android:id="@+id/tvCountStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/spacing_02"
             android:gravity="center"
             app:drawableLeftCompat="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tvDescRepositoryDescription"
             app:layout_constraintTop_toBottomOf="@+id/tvDescRepositoryDescription"
             tools:text="100" />
@@ -93,9 +97,10 @@
             android:id="@+id/tvCountFork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/spacing_02"
             android:gravity="center"
             app:drawableLeftCompat="@drawable/ic_fork"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvCountStart"
             app:layout_constraintTop_toBottomOf="@+id/tvDescRepositoryDescription"
             tools:text="100" />

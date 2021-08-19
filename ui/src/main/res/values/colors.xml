@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="branding_500">#5951c6</color>
+    <color name="branding_900">#361e8e</color>
+
+    <color name="grayscale_black">#000000</color>
+    <color name="grayscale_500">#3E3737</color>
+    <color name="grayscale_white">#FFFFFF</color>
+
+</resources>

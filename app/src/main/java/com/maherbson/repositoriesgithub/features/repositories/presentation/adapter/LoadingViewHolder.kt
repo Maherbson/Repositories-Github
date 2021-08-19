@@ -5,4 +5,4 @@ import com.maherbson.repositoriesgithub.databinding.ItemLoadingBinding
 
 class LoadingViewHolder(
     private val itemLoadingBinding: ItemLoadingBinding
-)  : RecyclerView.ViewHolder(itemLoadingBinding.root)
+) : RecyclerView.ViewHolder(itemLoadingBinding.root)
