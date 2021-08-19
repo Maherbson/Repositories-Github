@@ -7,6 +7,8 @@ apply from: "$rootProject.projectDir/config-gradle/android.gradle"
 
 dependencies {
     implementation project(Modules.ui)
+    implementation project(Modules.network)
+    implementation project(Modules.core)
 
     implementation KotlinLibs.stdlib
     implementation KotlinLibs.stdlibJdk

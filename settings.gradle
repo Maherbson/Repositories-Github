@@ -2,3 +2,4 @@ rootProject.name = "Repositories GitHub"
 include ':app'
 include ':ui'
 include ':network'
+include ':core'
