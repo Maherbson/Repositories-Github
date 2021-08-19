@@ -1,6 +1,5 @@
 object ViewLibs {
     const val gradle = "com.android.tools.build:gradle:${Versions.buildGradle}"
-    const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.androidxAppCompat}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.androidxCoreKtx}"
     const val constraintLayout =

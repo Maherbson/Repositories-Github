@@ -2,14 +2,14 @@ object Versions {
 
     const val kotlin = "1.5.21"
     const val buildGradle = "4.1.1"
-    const val androidxAppCompat = "1.3.1"
-    const val androidxCoreKtx = "1.6.0"
-    const val androidxConstraintLayout = "2.1.0"
+    const val androidxAppCompat = "1.2.0"
+    const val androidxCoreKtx = "1.3.2"
+    const val androidxConstraintLayout = "2.0.4"
     const val androidxFragment = "1.3.1"
     const val cardView = "1.0.0"
     const val androidxActivity = "1.1.0"
     const val navigation = "2.2.0"
-    const val material = "1.4.0"
+    const val material = "1.3.0"
     const val glide = "4.12.0"
 
     const val lifecycleVersion = "2.2.0"

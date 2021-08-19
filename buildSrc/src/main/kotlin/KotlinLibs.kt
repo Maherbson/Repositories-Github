@@ -1,5 +1,6 @@
 object KotlinLibs {
     const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+    const val stdlibJdk = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val buildGradle = "com.android.tools.build:gradle:${Versions.buildGradle}"
     const val ktLint = "org.jlleitschuh.gradle.ktlint"

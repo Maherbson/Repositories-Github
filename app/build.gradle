@@ -2,28 +2,20 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-apply from: "$rootProject.projectDir/config-gradle/android.gradle"
 
-android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-}
+apply from: "$rootProject.projectDir/config-gradle/android.gradle"
 
 dependencies {
 
     implementation KotlinLibs.stdlib
+    implementation KotlinLibs.stdlibJdk
     implementation ViewLibs.coreKtx
     implementation ViewLibs.appcompat
     implementation ViewLibs.material
     implementation ViewLibs.constraintLayout
 
-    implementation KoinLibs.koinAndroid
-    implementation KoinLibs.koinCore
+    //implementation KoinLibs.koinAndroid
+    //implementation KoinLibs.koinCore
 
     testImplementation UnitTestLibs.jUnit
     androidTestImplementation UnitTestLibs.jUnitKtx

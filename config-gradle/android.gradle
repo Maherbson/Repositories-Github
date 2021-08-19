@@ -7,10 +7,13 @@ android {
         targetSdkVersion Config.targetSdk
         versionCode Config.versionCode
         versionName Config.versionName
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -23,10 +26,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             debuggable true
         }
-    }
-
-    testOptions {
-        unitTests.returnDefaultValues = true
     }
 
     compileOptions {
