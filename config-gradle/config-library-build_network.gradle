@@ -1,0 +1,27 @@
+apply from: "$rootProject.projectDir/config-gradle/config-library-build.gradle"
+
+android {
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", '"https://bank-app-test.herokuapp.com/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "DEVELOPMENT", "false"
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", '"https://bank-app-test.herokuapp.com/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+            buildConfigField "boolean", "DEVELOPMENT", "false"
+        }
+        development {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", '"http://localhost:8080/"'
+            buildConfigField "boolean", "DEVELOPMENT", "true"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+    }
+}
