@@ -39,10 +39,12 @@ dependencies {
     testImplementation UnitTestLibs.mockitoCore
     testImplementation UnitTestLibs.mockitoInline
     testImplementation UnitTestLibs.mockitoKotlin
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
 
     androidTestImplementation UnitTestLibs.jUnitKtx
     androidTestImplementation InstrumentedTestLibs.espressoCore
-    androidTestImplementation (KoinLibs.koinTest) { exclude group: 'org.mockito' }
+    androidTestImplementation(KoinLibs.koinTest) { exclude group: 'org.mockito' }
 
 }
 repositories {

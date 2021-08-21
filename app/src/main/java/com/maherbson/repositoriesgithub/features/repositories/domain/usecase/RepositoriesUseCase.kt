@@ -1,14 +1,13 @@
 package com.maherbson.repositoriesgithub.features.repositories.domain.usecase
 
-import android.util.Log
 import com.maherbson.repositoriesgithub.features.repositories.domain.model.Repositories
 import com.maherbson.repositoriesgithub.features.repositories.domain.repository.RepositoriesRepositoryContract
 
-private const val INITIAL_PAGE= 1
+private const val INITIAL_PAGE = 1
 
 class RepositoriesUseCase(
     private val repositoriesRepositoryContract: RepositoriesRepositoryContract
-): RepositoriesUseCaseContract {
+) : RepositoriesUseCaseContract {
 
     private var page: Int = INITIAL_PAGE
 
@@ -18,9 +17,5 @@ class RepositoriesUseCase(
             page++
         }
         return repositories
-    }
-
-    override fun restartPage() {
-        page = INITIAL_PAGE
     }
 }

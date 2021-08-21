@@ -48,7 +48,7 @@ class RepositoriesActivity : AppCompatActivity() {
                     horizontalScroll = dy,
                     childCount = layoutManager.childCount,
                     itemCount = layoutManager.itemCount,
-                    findFirstCompletelyVisibleItemPosition =
+                    findFirstVisibleItemPosition =
                     layoutManager.findFirstVisibleItemPosition()
                 )
             }

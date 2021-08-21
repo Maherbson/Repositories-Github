@@ -56,14 +56,14 @@ class RepositoriesViewModel(
         horizontalScroll: Int,
         childCount: Int,
         itemCount: Int,
-        findFirstCompletelyVisibleItemPosition: Int
+        findFirstVisibleItemPosition: Int
     ) {
         if (infinityScrollContract(
                 horizontalScroll,
                 loadingMore,
                 childCount,
                 itemCount,
-                findFirstCompletelyVisibleItemPosition
+                findFirstVisibleItemPosition
             )
         ) {
             loadingMore = false

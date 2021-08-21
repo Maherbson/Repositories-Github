@@ -8,5 +8,6 @@ object InstrumentedTestLibs {
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.squareUpMockWebServer}"
     const val fragmentTest =
         "androidx.fragment:fragment-testing:${Versions.androidxFragmentTesting}"
-    const val mockitokotlin2 = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
+    const val mockitokotlin2 =
+        "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
 }

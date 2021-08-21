@@ -5,5 +5,4 @@ import com.maherbson.repositoriesgithub.features.repositories.domain.model.Repos
 interface RepositoriesUseCaseContract {
 
     suspend operator fun invoke(): List<Repositories>
-    fun restartPage()
 }

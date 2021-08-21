@@ -4,13 +4,13 @@ import com.maherbson.network.BuildConfig
 import com.maherbson.network.client.Client
 import com.maherbson.network.info.NetworkConnection
 import com.maherbson.network.info.NetworkConnectionContract
+import java.util.concurrent.TimeUnit
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
 
 private const val CONNECTION_TIMEOUT = 30L
 private const val READ_TIMEOUT = 30L

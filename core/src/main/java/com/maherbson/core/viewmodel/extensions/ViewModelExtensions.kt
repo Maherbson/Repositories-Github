@@ -12,6 +12,7 @@ inline fun <reified S : State, reified A : Action> AppCompatActivity.onStateObse
 ) {
     viewModel.state.observe(this, { state -> states(state as S) })
 }
+
 inline fun <reified S : State> AppCompatActivity.onState(
     viewModel: ViewModelState<S>,
     crossinline states: (S) -> Unit
