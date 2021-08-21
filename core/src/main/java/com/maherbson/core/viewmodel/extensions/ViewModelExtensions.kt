@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.maherbson.core.viewmodel.Action
 import com.maherbson.core.viewmodel.State
 import com.maherbson.core.viewmodel.ViewModel
+import com.maherbson.core.viewmodel.ViewModelState
 
 inline fun <reified S : State, reified A : Action> AppCompatActivity.onStateObserver(
     viewModel: ViewModel<S, A>,
+    crossinline states: (S) -> Unit
+) {
+    viewModel.state.observe(this, { state -> states(state as S) })
+}
+inline fun <reified S : State> AppCompatActivity.onState(
+    viewModel: ViewModelState<S>,
     crossinline states: (S) -> Unit
 ) {
     viewModel.state.observe(this, { state -> states(state as S) })

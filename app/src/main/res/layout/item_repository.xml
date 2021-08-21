@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@null"
             app:layout_constraintBottom_toTopOf="@+id/tvUserName"
-            app:layout_constraintEnd_toStartOf="@+id/tvRepositoryName"
+            app:layout_constraintEnd_toStartOf="@+id/divider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
@@ -38,15 +38,15 @@
             tools:text="Repository Name" />
 
         <TextView
-            android:id="@+id/tvDescRepositoryDescription"
+            android:id="@+id/tvRepositoryDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_02"
+            android:maxLines="4"
             app:layout_constraintEnd_toEndOf="@+id/tvRepositoryName"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tvRepositoryName"
             app:layout_constraintTop_toBottomOf="@+id/tvRepositoryName"
-            tools:maxLines="4"
             tools:text="@tools:sample/lorem/random" />
 
         <TextView
@@ -54,25 +54,13 @@
             style="@style/BodyBold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:foregroundGravity="center_horizontal"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/tvNameLastname"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/divider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivRepositoryAvatar"
             tools:text="username" />
-
-        <TextView
-            android:id="@+id/tvNameLastname"
-            style="@style/BodyBold"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:minLines="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUserName"
-            tools:text="Name Lastname" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/divider"
@@ -89,8 +77,8 @@
             android:gravity="center"
             app:drawableLeftCompat="@drawable/ic_star"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvDescRepositoryDescription"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescRepositoryDescription"
+            app:layout_constraintEnd_toEndOf="@+id/tvRepositoryDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryDescription"
             tools:text="100" />
 
         <TextView
@@ -102,7 +90,7 @@
             app:drawableLeftCompat="@drawable/ic_fork"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvCountStart"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescRepositoryDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryDescription"
             tools:text="100" />
 
 

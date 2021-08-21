@@ -34,12 +34,14 @@ dependencies {
     implementation KotlinLibs.coroutinesRunTime
     implementation KotlinLibs.coroutinesLiveData
 
+    testImplementation UnitTestLibs.jUnitKtx
     testImplementation UnitTestLibs.jUnit
+    testImplementation UnitTestLibs.mockitoCore
+    testImplementation UnitTestLibs.mockitoInline
+    testImplementation UnitTestLibs.mockitoKotlin
+
     androidTestImplementation UnitTestLibs.jUnitKtx
     androidTestImplementation InstrumentedTestLibs.espressoCore
-    androidTestImplementation UnitTestLibs.mockitoAndroid
-    androidTestImplementation UnitTestLibs.mockitoCore
-    androidTestImplementation UnitTestLibs.mockitoKotlin
     androidTestImplementation (KoinLibs.koinTest) { exclude group: 'org.mockito' }
 
 }

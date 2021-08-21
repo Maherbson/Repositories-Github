@@ -10,6 +10,8 @@ dependencies {
 
     implementation KotlinLibs.stdlib
     implementation ViewLibs.coreKtx
+    implementation ViewLibs.fragment
     implementation ViewLibs.appcompat
     implementation ViewLibs.material
+    implementation ViewLibs.glide
 }

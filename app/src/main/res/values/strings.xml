@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Repositories GitHub</string>
+    <string name="ops">Ops!</string>
+    <string name="no_connection">Parece que ocorreu um erro de conexão.\nPor favor, verifique sua conexão!</string>
+
+    <string name="cancel">Cancelar</string>
+    <string name="try_again">Tentar novamente</string>
 </resources>

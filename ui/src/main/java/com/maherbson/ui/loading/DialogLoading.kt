@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.maherbson.ui.R
 import com.maherbson.ui.databinding.DialogLoadingBinding
 
 class DialogLoading : AppCompatDialogFragment() {
