@@ -35,8 +35,8 @@ class DialogLoading : AppCompatDialogFragment() {
         return dialogLoadingBinding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val message = arguments?.getString(MESSAGE_EXTRA).orEmpty()
         if (message.isNotEmpty()) dialogLoadingBinding.messageLoading.text = message

@@ -5,7 +5,6 @@ dependencies {
     implementation KotlinLibs.stdlibJdk
     implementation ViewLibs.coreKtx
     implementation ViewLibs.appcompat
-    implementation ViewLibs.fragment
 
     implementation KoinLibs.koinCore
 

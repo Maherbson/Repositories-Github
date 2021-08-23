@@ -1,4 +1,4 @@
-package com.maherbson.infinityscroll
+package com.maherbson.infinitescroll
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

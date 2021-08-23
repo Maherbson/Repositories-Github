@@ -1,8 +1,8 @@
 package com.maherbson.repositoriesgithub.features.repositories.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.maherbson.core.viewmodel.ViewModelState
-import com.maherbson.infinityscroll.InfiniteScrollUseCaseContract
+import com.maherbson.core.viewmodel.ViewModel
+import com.maherbson.infinitescroll.InfiniteScrollUseCaseContract
 import com.maherbson.network.exception.NetworkException
 import com.maherbson.repositoriesgithub.R
 import com.maherbson.repositoriesgithub.features.repositories.domain.usecase.RepositoriesUseCaseContract
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class RepositoriesViewModel(
     private val repositoriesUseCaseContract: RepositoriesUseCaseContract,
     private val infinityScrollContract: InfiniteScrollUseCaseContract
-) : ViewModelState<RepositoriesState>(RepositoriesState()) {
+) : ViewModel<RepositoriesState, RepositoriesAction>(RepositoriesState()) {
 
     private var loadingMore = true
 
@@ -23,20 +23,26 @@ class RepositoriesViewModel(
     fun getRepositories() {
         viewModelScope.launch {
             try {
-                setState { state -> state.showLoading(true) }
+                showLoadingState(true)
                 val repositories = repositoriesUseCaseContract()
                 if (repositories.isNotEmpty()) {
-                    setState { state -> state.showLoading(false) }
-                    setState { state -> state.showRepositories(RepoMapper().map(repositories)) }
+                    showLoadingState(false)
+                    setState { state ->
+                        state.showRepositories(RepoMapper().map(repositories))
+                    }
                     loadingMore = true
                 } else {
-                    setState { state -> state.showLoading(false) }
+                    showLoadingState(false)
                 }
             } catch (exception: Exception) {
                 handleException(exception)
-                setState { state -> state.showLoading(false) }
+                showLoadingState(false)
             }
         }
+    }
+
+    private fun showLoadingState(showLoading: Boolean) {
+        setState { state -> state.showLoading(showLoading) }
     }
 
     private fun handleException(exception: Exception) {
@@ -52,12 +58,29 @@ class RepositoriesViewModel(
         }
     }
 
+    fun fetchMore(
+        horizontalScroll: Int,
+        childCount: Int,
+        itemCount: Int,
+        findFirstVisibleItemPosition: Int
+    ) {
+        setAction {
+            InfiniteScrollAction(
+                horizontalScroll,
+                childCount,
+                itemCount,
+                findFirstVisibleItemPosition
+            )
+        }
+    }
+
     fun repositories(
         horizontalScroll: Int,
         childCount: Int,
         itemCount: Int,
         findFirstVisibleItemPosition: Int
     ) {
+
         if (infinityScrollContract(
                 horizontalScroll,
                 loadingMore,

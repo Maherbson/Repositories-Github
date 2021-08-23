@@ -1,4 +1,4 @@
-package com.maherbson.infinityscroll
+package com.maherbson.infinitescroll
 
 interface InfiniteScrollUseCaseContract {
 

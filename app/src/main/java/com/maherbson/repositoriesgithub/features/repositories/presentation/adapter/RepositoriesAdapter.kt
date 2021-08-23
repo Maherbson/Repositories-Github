@@ -8,7 +8,7 @@ import com.maherbson.repositoriesgithub.features.repositories.presentation.model
 
 class RepositoriesAdapter : RecyclerView.Adapter<RepositoryViewHolder>() {
 
-    private val repositories: ArrayList<RepositoryView?> = arrayListOf()
+    private var repositories: ArrayList<RepositoryView> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -17,16 +17,20 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoryViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
-        repositories[position]?.let { repository -> holder.bind(repository) }
+        holder.bind(repositories[position])
     }
 
     override fun getItemCount(): Int {
         return repositories.size
     }
 
-    fun setRepositories(repositories: List<RepositoryView?>) {
-        this.repositories.addAll(repositories)
-        notifyItemRangeInserted(this.repositories.size, repositories.size - 1)
+    fun setRepositories(repositoriesView: List<RepositoryView>) {
+        repositories.addAll(repositoriesView)
+        notifyItemRangeInserted(this.repositories.size, repositoriesView.size - 1)
+    }
+
+    fun getRepositories() : ArrayList<RepositoryView> {
+        return repositories
     }
 
 }

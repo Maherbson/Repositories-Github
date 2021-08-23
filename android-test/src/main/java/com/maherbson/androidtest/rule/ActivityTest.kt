@@ -10,22 +10,13 @@ import org.junit.Rule
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-open class ActivityTest<out A : RobotAssertion, out B : RobotAction>(
-    mActivity: Class<out AppCompatActivity>
+abstract class ActivityTest<out A : RobotAssertion, out B : RobotAction>(
+    activity: Class<out AppCompatActivity>
 ) : RobotArrangement<A, B> {
 
     @get:Rule
-    val activityTestRule = ActivityTestRule<Activity>(
-        mActivity,
-        this.getModules() + this.additionalModule()
-    ) { declareMock() }
+    val activityTestRule = ActivityTestRule<Activity>(activity, this.getModules())
 
     open fun getModules(): List<Module> = emptyList()
 
-    open fun additionalModule(): Module = module {}
-
-    @Before
-    open fun setUp() = Unit
-
-    open fun declareMock() = Unit
 }

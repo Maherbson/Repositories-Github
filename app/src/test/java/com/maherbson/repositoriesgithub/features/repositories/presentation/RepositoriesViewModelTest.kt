@@ -2,7 +2,7 @@ package com.maherbson.repositoriesgithub.features.repositories.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.maherbson.infinityscroll.InfiniteScrollUseCaseContract
+import com.maherbson.infinitescroll.InfiniteScrollUseCaseContract
 import com.maherbson.repositoriesgithub.TestCoroutineRule
 import com.maherbson.repositoriesgithub.features.mock.repositories
 import com.maherbson.repositoriesgithub.features.mock.repositoriesNext
@@ -40,6 +40,8 @@ class RepositoriesViewModelTest {
 
     @Mock
     lateinit var repositoriesState: Observer<RepositoriesState>
+    @Mock
+    lateinit var repositoriesAction: Observer<RepositoriesAction>
 
     private lateinit var repositoriesViewModel: RepositoriesViewModel
 
@@ -56,11 +58,13 @@ class RepositoriesViewModelTest {
             whenever(repositoriesUseCaseContract.invoke()).thenReturn(repositories())
             initViewModel()
             repositoriesViewModel.state.observeForever(repositoriesState)
+            repositoriesViewModel.action.observeForever(repositoriesAction)
 
             verifyKotlin(repositoriesState).onChanged(
                 RepositoriesState(
                     isLoading = false,
-                    repositories = repositoriesView()
+                    repositories = repositoriesView(),
+                    freshMore = true
                 )
             )
         }
@@ -73,6 +77,7 @@ class RepositoriesViewModelTest {
             whenever(repositoriesUseCaseContract.invoke()).thenReturn(repositoriesNext())
             initViewModel()
             repositoriesViewModel.state.observeForever(repositoriesState)
+            repositoriesViewModel.action.observeForever(repositoriesAction)
 
             repositoriesViewModel.repositories(
                 100,
@@ -85,7 +90,8 @@ class RepositoriesViewModelTest {
                 verifyKotlin(repositoriesState).onChanged(
                     RepositoriesState(
                         isLoading = false,
-                        repositories = repositoriesViewNext()
+                        repositories = repositoriesViewNext(),
+                        freshMore = true
                     )
                 )
             }

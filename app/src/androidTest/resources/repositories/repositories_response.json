@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "name": "okhttp",
+      "owner": {
+        "login": "square",
+        "avatar_url": "url"
+      },
+      "description": "Square’s meticulous HTTP client for the JVM, Android, and GraalVM.",
+      "forks": 8614,
+      "watchers": 40642
+    },
+    {
+      "name": "architecture-samples",
+      "owner": {
+        "login": "android",
+        "avatar_url": "url"
+      },
+      "description": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
+      "forks": 10796,
+      "watchers": 39301
+    },
+    {
+      "name": "kotlin",
+      "owner": {
+        "login": "JetBrains",
+        "avatar_url": "url"
+      },
+      "description": "The Kotlin Programming Language.",
+      "forks": 4665,
+      "watchers": 38482
+    },
+    {
+      "name": "shadowsocks-android",
+      "owner": {
+        "login": "shadowsocks",
+        "avatar_url": "url"
+      },
+      "description": "A shadowsocks client for Android",
+      "forks": 11478,
+      "watchers": 31758
+    },
+    {
+      "name": "leakcanary",
+      "owner": {
+        "login": "square",
+        "avatar_url": "url"
+      },
+      "description": "A memory leak detection library for Android.",
+      "forks": 3797,
+      "watchers": 26556
+    },
+    {
+      "name": "p3c",
+      "owner": {
+        "login": "alibaba",
+        "avatar_url": "url"
+      },
+      "description": "Alibaba Java Coding Guidelines pmd implements and IDE plugin",
+      "forks": 7049,
+      "watchers": 25965
+    },
+    {
+      "name": "fanqiang",
+      "owner": {
+        "login": "bannedbook",
+        "avatar_url": "url"
+      },
+      "description": "翻墙-科学上网",
+      "forks": 5024,
+      "watchers": 22018
+    },
+    {
+      "name": "architecture-components-samples",
+      "owner": {
+        "login": "android",
+        "avatar_url": "url"
+      },
+      "description": "Samples for Android Architecture Components.",
+      "forks": 3797,
+      "watchers": 26556
+    },
+    {
+      "name": "iosched",
+      "owner": {
+        "login": "google",
+        "avatar_url": "url"
+      },
+      "description": "The Google I/O Android App",
+      "forks": 6151,
+      "watchers": 20698
+    },
+    {
+      "name": "material-dialogs",
+      "owner": {
+        "login": "afollestad",
+        "avatar_url": "url"
+      },
+      "description": "\uD83D\uDE0D A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",
+      "forks": 3111,
+      "watchers": 18949
+    },
+    {
+      "name": "flexbox-layout",
+      "owner": {
+        "login": "google",
+        "avatar_url": "url"
+      },
+      "description": "Flexbox for Android",
+      "forks": 1757,
+      "watchers": 16927
+    },
+    {
+      "name": "plaid",
+      "owner": {
+        "login": "nickbutcher",
+        "avatar_url": "url"
+      },
+      "description": "An Android app which provides design news & inspiration as well as being an example of implementing material design.",
+      "forks": 3259,
+      "watchers": 16096
+    }
+  ]
+}

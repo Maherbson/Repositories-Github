@@ -34,7 +34,7 @@ fun repositoriesNext(): List<Repositories> = listOf(
     )
 )
 
-fun repositoriesView(): List<RepositoryView> = listOf(
+fun repositoriesView(): ArrayList<RepositoryView> = arrayListOf(
     RepositoryView(
         name = "okhttp",
         description = "Square’s meticulous HTTP client for the JVM, Android, and GraalVM.",
@@ -47,7 +47,7 @@ fun repositoriesView(): List<RepositoryView> = listOf(
     )
 )
 
-fun repositoriesViewNext(): List<RepositoryView> = listOf(
+fun repositoriesViewNext(): ArrayList<RepositoryView> = arrayListOf(
     RepositoryView(
         name = "architecture-samples",
         description = "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps. ",

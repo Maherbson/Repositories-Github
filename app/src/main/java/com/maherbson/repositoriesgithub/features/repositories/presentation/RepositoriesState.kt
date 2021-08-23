@@ -5,36 +5,41 @@ import com.maherbson.repositoriesgithub.features.repositories.presentation.model
 
 data class RepositoriesState(
     val isLoading: Boolean = true,
-    val isLoadingInfinityScroll: Boolean = false,
     val dialogErrorState: DialogErrorState? = null,
-    val repositories: List<RepositoryView>? = arrayListOf()
+    var repositories: List<RepositoryView> = arrayListOf(),
+    val freshMore: Boolean = false
 ) : State {
 
-    fun showLoading(showLoading: Boolean): RepositoriesState {
+
+    fun showLoading(
+        showLoading: Boolean
+    ): RepositoriesState {
         return this.copy(
             isLoading = showLoading,
             dialogErrorState = null,
-            repositories = null
+            freshMore = false
         )
     }
 
-    fun showMessageError(title: Int, message: Int): RepositoriesState {
+    fun showMessageError(
+        title: Int,
+        message: Int
+    ): RepositoriesState {
         return this.copy(
-            dialogErrorState = DialogErrorState(titleError = title, messageError = message)
+            dialogErrorState = DialogErrorState(
+                titleError = title,
+                messageError = message
+            )
         )
     }
 
-    fun showRepositories(repositoriesView: List<RepositoryView>): RepositoriesState {
+    fun showRepositories(
+        repositoriesView: List<RepositoryView>
+    ): RepositoriesState {
         return this.copy(
+            dialogErrorState = null,
             repositories = repositoriesView,
-            dialogErrorState = null
-        )
-    }
-
-    fun cleanRepositories(): RepositoriesState {
-        return this.copy(
-            repositories = emptyList(),
-            dialogErrorState = null
+            freshMore = true
         )
     }
 

@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.maherbson.core.viewmodel.extensions.onState
+import com.maherbson.core.viewmodel.extensions.onActionObserver
+import com.maherbson.core.viewmodel.extensions.onStateObserver
 import com.maherbson.repositoriesgithub.R
 import com.maherbson.repositoriesgithub.databinding.ActivityRepositoriesBinding
 import com.maherbson.repositoriesgithub.features.repositories.presentation.adapter.RepositoriesAdapter
@@ -41,10 +42,11 @@ class RepositoriesActivity : AppCompatActivity() {
 
     private fun setupInfinityScroll() {
         val layoutManager = binding.rvRepositories.layoutManager as LinearLayoutManager
+
         binding.rvRepositories.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                repositoriesViewModel.repositories(
+                repositoriesViewModel.fetchMore(
                     horizontalScroll = dy,
                     childCount = layoutManager.childCount,
                     itemCount = layoutManager.itemCount,
@@ -56,13 +58,26 @@ class RepositoriesActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-        onState(repositoriesViewModel) { repositoriesState ->
+        onStateObserver(repositoriesViewModel) { repositoriesState ->
             with(repositoriesState) {
                 loading()
                 fillRepositories()
                 messageError()
             }
+        }
 
+        onActionObserver(repositoriesViewModel) { repositoriesAction ->
+            when(repositoriesAction) {
+                is InfiniteScrollAction -> {
+                    repositoriesViewModel.repositories(
+                        horizontalScroll = repositoriesAction.horizontalScroll,
+                        childCount = repositoriesAction.childCount,
+                        itemCount = repositoriesAction.itemCount,
+                        findFirstVisibleItemPosition =
+                        repositoriesAction.findFirstVisibleItemPosition
+                    )
+                }
+            }
         }
     }
 
@@ -71,8 +86,9 @@ class RepositoriesActivity : AppCompatActivity() {
     }
 
     private fun RepositoriesState.fillRepositories() {
-        repositories?.let {
+        if (repositories.isNotEmpty() && freshMore) {
             repositoriesAdapter.setRepositories(repositories)
+            repositories = repositoriesAdapter.getRepositories()
         }
     }
 

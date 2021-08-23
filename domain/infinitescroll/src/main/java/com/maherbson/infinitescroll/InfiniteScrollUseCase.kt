@@ -1,4 +1,4 @@
-package com.maherbson.infinityscroll
+package com.maherbson.infinitescroll
 
 private const val INITIAL_HORIZONTAL_SCROLL = 0
 

@@ -1,7 +1,7 @@
-package com.maherbson.infinityscroll.di
+package com.maherbson.infinitescroll.di
 
-import com.maherbson.infinityscroll.InfiniteScrollUseCase
-import com.maherbson.infinityscroll.InfiniteScrollUseCaseContract
+import com.maherbson.infinitescroll.InfiniteScrollUseCase
+import com.maherbson.infinitescroll.InfiniteScrollUseCaseContract
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

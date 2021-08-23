@@ -58,12 +58,12 @@ class RepositoriesRepositoryTest {
     private fun repositories(): List<Repo> {
         return listOf(
             Repo(
-                name = "Name",
-                description = "Description",
+                name = "okhttp",
+                description = "Square’s meticulous HTTP client for the JVM, Android, and GraalVM.",
                 watchers = 1,
                 forks = 1,
                 owner = Owner(
-                    login = "Login",
+                    login = "square",
                     avatar_url = "url"
                 )
             )

@@ -12,6 +12,16 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    sourceSets {
+        def sharedTest = 'src/sharedTest/java'
+        test {
+            java.srcDir sharedTest
+        }
+        androidTest {
+            java.srcDir sharedTest
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

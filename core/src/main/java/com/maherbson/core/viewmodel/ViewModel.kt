@@ -23,17 +23,3 @@ open class ViewModel<S : State, A : Action>(
     }
 
 }
-
-open class ViewModelState<S : State>(
-    initState: S
-) : ViewModel() {
-
-    private val _state = MutableLiveData(initState)
-    val state: LiveData<S> = _state
-
-
-    fun setState(state: (S) -> S) {
-        _state.value = state(_state.value!!)
-    }
-
-}

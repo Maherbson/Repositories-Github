@@ -22,13 +22,12 @@ import org.koin.core.module.Module
 
 open class ActivityTestRule<T : Activity>(
     private val mActivity: Class<out AppCompatActivity>,
-    private val modules: List<Module>,
-    private val declareMock: () -> Unit = {}
+    private val modules: List<Module>
 ) : TestRule {
 
     private lateinit var activityRule: ActivityScenario<T>
 
-    val mockWebServer = MockWebServer()
+    private val mockWebServer = MockWebServer()
 
     override fun apply(base: Statement?, description: Description?): Statement {
         return RuleChain
@@ -39,7 +38,8 @@ open class ActivityTestRule<T : Activity>(
 
     private fun getKoinRule(): KoinRule {
         val application =
-            InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as Application
+            InstrumentationRegistry.getInstrumentation()
+                .targetContext.applicationContext as Application
         val baseUrl = mockWebServer.url("/").toString()
         return KoinRule(application, baseUrl)
     }
@@ -57,7 +57,6 @@ open class ActivityTestRule<T : Activity>(
                 modules(modules)
                 properties(mapOf("PROPERTY_BASE_URL" to baseUrl))
             }
-            declareMock.invoke()
             val intent = Intent().apply {
                 component = ComponentName(app.applicationContext, mActivity)
                 putExtras(Bundle())

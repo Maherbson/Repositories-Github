@@ -5,7 +5,7 @@ import com.maherbson.repositoriesgithub.features.repositories.data.remote.model.
 
 class RepositoriesDataSource(
     private val repositoriesService: RepositoriesService
-) : RepositoriesDataSourceContract {
+): RepositoriesDataSourceContract {
 
     override suspend fun getRepositories(page: Int): RepositoriesResponse {
         return repositoriesService.getRepositories(page)

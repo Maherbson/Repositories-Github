@@ -11,13 +11,12 @@ dependencies {
 
     implementation InstrumentedTestLibs.rule
     api UnitTestLibs.mockitoKotlin
-    api "io.mockk:mockk-android:1.10.6"
-    implementation UnitTestLibs.jUnitKtx
+    api UnitTestLibs.jUnitKtx
     api UnitTestLibs.mockitoAndroid
     api UnitTestLibs.mockitoCore
-    api(KoinLibs.koinTest) { exclude group: 'org.mockito' }
-    implementation InstrumentedTestLibs.runner
-    implementation InstrumentedTestLibs.espressoCore
+    api (KoinLibs.koinTest) { exclude group: 'org.mockito' }
+    api InstrumentedTestLibs.runner
+    api InstrumentedTestLibs.espressoCore
     implementation InstrumentedTestLibs.espressoContrib
     implementation InstrumentedTestLibs.espressoIntents
     implementation InstrumentedTestLibs.mockWebServer
