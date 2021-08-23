@@ -3,17 +3,10 @@ apply from: "$rootProject.projectDir/config-gradle/config-library-build.gradle"
 dependencies {
     implementation KotlinLibs.stdlib
     implementation KotlinLibs.stdlibJdk
-    implementation ViewLibs.coreKtx
     implementation ViewLibs.appcompat
 
     implementation KoinLibs.koinCore
 
-    implementation Lifecycle.lifecycleExtension
-    implementation Lifecycle.lifecycleRuntime
     implementation Lifecycle.lifecycleViewModelKtx
-    implementation Lifecycle.lifecycleCompiler
     implementation Lifecycle.lifecycleLiveDataKtx
-}
-repositories {
-    mavenCentral()
 }

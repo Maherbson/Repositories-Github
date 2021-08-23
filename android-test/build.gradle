@@ -14,7 +14,7 @@ dependencies {
     api UnitTestLibs.jUnitKtx
     api UnitTestLibs.mockitoAndroid
     api UnitTestLibs.mockitoCore
-    api (KoinLibs.koinTest) { exclude group: 'org.mockito' }
+    api(KoinLibs.koinTest) { exclude group: 'org.mockito' }
     api InstrumentedTestLibs.runner
     api InstrumentedTestLibs.espressoCore
     implementation InstrumentedTestLibs.espressoContrib

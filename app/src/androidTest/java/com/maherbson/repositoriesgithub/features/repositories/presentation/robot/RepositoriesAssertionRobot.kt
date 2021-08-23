@@ -3,7 +3,7 @@ package com.maherbson.repositoriesgithub.features.repositories.presentation.robo
 import checkTextIsDisplayed
 import com.maherbson.androidtest.robot.RobotAssertion
 
-class RepositoriesAssertionRobot: RobotAssertion {
+class RepositoriesAssertionRobot : RobotAssertion {
 
     fun checkNameRepository(nameRepository: String) {
         checkTextIsDisplayed(nameRepository)

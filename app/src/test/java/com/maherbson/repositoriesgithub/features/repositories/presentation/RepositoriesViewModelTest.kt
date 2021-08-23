@@ -40,6 +40,7 @@ class RepositoriesViewModelTest {
 
     @Mock
     lateinit var repositoriesState: Observer<RepositoriesState>
+
     @Mock
     lateinit var repositoriesAction: Observer<RepositoriesAction>
 

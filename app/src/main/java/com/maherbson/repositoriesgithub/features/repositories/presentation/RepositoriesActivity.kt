@@ -67,7 +67,7 @@ class RepositoriesActivity : AppCompatActivity() {
         }
 
         onActionObserver(repositoriesViewModel) { repositoriesAction ->
-            when(repositoriesAction) {
+            when (repositoriesAction) {
                 is InfiniteScrollAction -> {
                     repositoriesViewModel.repositories(
                         horizontalScroll = repositoriesAction.horizontalScroll,

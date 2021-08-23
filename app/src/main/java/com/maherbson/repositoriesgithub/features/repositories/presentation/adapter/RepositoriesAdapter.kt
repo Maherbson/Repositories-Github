@@ -29,7 +29,7 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoryViewHolder>() {
         notifyItemRangeInserted(this.repositories.size, repositoriesView.size - 1)
     }
 
-    fun getRepositories() : ArrayList<RepositoryView> {
+    fun getRepositories(): ArrayList<RepositoryView> {
         return repositories
     }
 
