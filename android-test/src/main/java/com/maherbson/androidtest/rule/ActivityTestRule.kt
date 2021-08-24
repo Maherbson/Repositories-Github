@@ -20,6 +20,8 @@ import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.core.module.Module
 
+private const val PROPERTY_BASE_URL = "PROPERTY_BASE_URL"
+
 open class ActivityTestRule<T : Activity>(
     private val mActivity: Class<out AppCompatActivity>,
     private val modules: List<Module>
@@ -55,7 +57,7 @@ open class ActivityTestRule<T : Activity>(
             startKoin {
                 androidContext(app)
                 modules(modules)
-                properties(mapOf("PROPERTY_BASE_URL" to baseUrl))
+                properties(mapOf(PROPERTY_BASE_URL to baseUrl))
             }
             val intent = Intent().apply {
                 component = ComponentName(app.applicationContext, mActivity)

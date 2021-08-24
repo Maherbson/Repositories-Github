@@ -27,7 +27,6 @@ object NetworkModule {
         factory {
             Retrofit
                 .Builder()
-                //.baseUrl(BuildConfig.API_URL)
                 .baseUrl(getProperty(PROPERTY_BASE_URL))
                 .client(get())
                 .addConverterFactory(GsonConverterFactory.create())
